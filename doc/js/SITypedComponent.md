@@ -6,7 +6,7 @@ Webcomponent wrapper around the freaking cool iTyped micro library to create nic
 
 ### Example
 ```html
-	<s-i-typed strings="['hello','world']">Cool</s-i-typed>
+	Hello <s-i-typed strings="['Univers']" loop="true">World</s-i-typed>
 ```
 Author : Olivier Bossel <olivier.bossel@gmail.com>
 
@@ -23,7 +23,7 @@ Create a nice typewriter effect
 #### Example
 ```html
 	<h3 class="h3">
-	Hello <s-i-typed strings="['Univers']">World</s-i-typed>
+	Hello <s-i-typed strings="['Univers']" loop="true">World</s-i-typed>
 </h3>
 ```
 Author : Olivier Bossel <olivier.bossel@gmail.com>
