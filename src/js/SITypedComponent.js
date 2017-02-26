@@ -44,7 +44,7 @@ export default class SITypedComponent extends SWebComponent {
 	 * Css
 	 * @protected
 	 */
-	static css(componentName, componentNameDash) {
+	static defaultCss(componentName, componentNameDash) {
 		return `
 			@keyframes s-i-typed-blink {
 				100% {

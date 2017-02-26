@@ -79,14 +79,14 @@ var SITypedComponent = function (_SWebComponent) {
 			(0, _ityped.init)(this, this.props);
 		}
 	}], [{
-		key: 'css',
+		key: 'defaultCss',
 
 
 		/**
    * Css
    * @protected
    */
-		value: function css(componentName, componentNameDash) {
+		value: function defaultCss(componentName, componentNameDash) {
 			return '\n\t\t\t@keyframes s-i-typed-blink {\n\t\t\t\t100% {\n\t\t\t\t\topacity: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t@-webkit-keyframes s-i-typed-blink {\n\t\t\t\t100% {\n\t\t\t\t\topacity: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t@-moz-keyframes s-i-typed-blink {\n\t\t\t\t100% {\n\t\t\t\t\topacity: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t.ityped-cursor {\n\t\t\t\tfont-size: 1em;\n\t\t\t\topacity: 1;\n\t\t\t\t-webkit-animation: s-i-typed-blink 0.3s infinite;\n\t\t\t\t-moz-animation: s-i-typed-blink 0.3s infinite;\n\t\t\t\tanimation: s-i-typed-blink 0.3s infinite;\n\t\t\t\tanimation-direction: alternate;\n\t\t\t}\n\t\t\t' + componentNameDash + ' {\n\t\t\t}\n\t\t';
 		}
 	}, {
