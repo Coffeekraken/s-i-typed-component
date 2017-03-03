@@ -108,6 +108,13 @@ var SITypedComponent = function (_SWebComponent) {
      * @name 	iTyped
      * @see 	https://github.com/luisvinicius167/ityped
      */
+
+				/**
+     * Set the strings to pass through
+     * @prop
+     * @type 		{Array}
+     */
+				strings: []
 			};
 		}
 	}]);
