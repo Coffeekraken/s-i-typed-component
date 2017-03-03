@@ -81,8 +81,7 @@ export default class SITypedComponent extends SWebComponent {
 	 */
 	componentWillMount() {
 		super.componentWillMount();
-		this.props.strings.unshift(this.innerHTML);
-		this.innerHTML = '';
+
 	}
 
 	/**
@@ -92,6 +91,9 @@ export default class SITypedComponent extends SWebComponent {
 	 */
 	componentMount() {
 		super.componentMount();
+
+		this.props.strings.unshift(this.innerHTML);
+		this.innerHTML = '';
 
 		// init the iTyped library
 		__iTypedInit(this, this.props);

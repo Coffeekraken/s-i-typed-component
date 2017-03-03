@@ -60,8 +60,6 @@ var SITypedComponent = function (_SWebComponent) {
    */
 		value: function componentWillMount() {
 			_get(SITypedComponent.prototype.__proto__ || Object.getPrototypeOf(SITypedComponent.prototype), 'componentWillMount', this).call(this);
-			this.props.strings.unshift(this.innerHTML);
-			this.innerHTML = '';
 		}
 
 		/**
@@ -74,6 +72,9 @@ var SITypedComponent = function (_SWebComponent) {
 		key: 'componentMount',
 		value: function componentMount() {
 			_get(SITypedComponent.prototype.__proto__ || Object.getPrototypeOf(SITypedComponent.prototype), 'componentMount', this).call(this);
+
+			this.props.strings.unshift(this.innerHTML);
+			this.innerHTML = '';
 
 			// init the iTyped library
 			(0, _ityped.init)(this, this.props);
