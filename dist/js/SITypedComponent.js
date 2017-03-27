@@ -24,19 +24,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @name 		SITypedComponent
  * @extends 	SWebComponent
  * Webcomponent wrapper around the freaking cool iTyped micro library to create nice typewriter effect.
- * @example 	html
- * Hello <s-i-typed strings="['Univers']" loop="true">World</s-i-typed>
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
- */
-
-/**
- * @name 		ITyped
- * Create a nice typewriter effect
+ *
  * @styleguide 	Objects / ITyped
  * @example 	html
- * <h3 class="h3">
- * 	Hello <s-i-typed strings="['Univers']" loop="true">World</s-i-typed>
- * </h3>
+ * Hello <s-i-typed strings="['Univers']" loop="true">World</s-i-typed>
+ * @see 		https://github.com/luisvinicius167/ityped
  * @author 		Olivier Bossel <olivier.bossel@gmail.com>
  */
 
@@ -50,14 +42,26 @@ var SITypedComponent = function (_SWebComponent) {
 	}
 
 	_createClass(SITypedComponent, [{
-		key: 'componentWillMount',
+		key: 'shouldAcceptComponentProp',
 
+
+		/**
+   * Should component accept prop
+   * @definition 		SWebComponent.shouldComponentAcceptProp
+   * @protected
+   */
+		value: function shouldAcceptComponentProp(prop) {
+			return true;
+		}
 
 		/**
    * Component will mount
    * @definition 		SWebComponent.componentWillMount
    * @protected
    */
+
+	}, {
+		key: 'componentWillMount',
 		value: function componentWillMount() {
 			_get(SITypedComponent.prototype.__proto__ || Object.getPrototypeOf(SITypedComponent.prototype), 'componentWillMount', this).call(this);
 		}
@@ -75,6 +79,10 @@ var SITypedComponent = function (_SWebComponent) {
 
 			this.props.strings.unshift(this.innerHTML);
 			this.innerHTML = '';
+
+			console.log(this.props.loop);
+
+			console.log('this', this);
 
 			// init the iTyped library
 			(0, _ityped.init)(this, this.props);
