@@ -104,10 +104,6 @@ export default class SITypedComponent extends SWebComponent {
 		this.props.strings.unshift(this.innerHTML);
 		this.innerHTML = '';
 
-		console.log(this.props.loop);
-
-		console.log('this', this);
-
 		// init the iTyped library
 		init(this, this.props);
 	}

@@ -80,10 +80,6 @@ var SITypedComponent = function (_SWebComponent) {
 			this.props.strings.unshift(this.innerHTML);
 			this.innerHTML = '';
 
-			console.log(this.props.loop);
-
-			console.log('this', this);
-
 			// init the iTyped library
 			(0, _ityped.init)(this, this.props);
 		}

@@ -34,5 +34,3 @@ See more : [https://github.com/luisvinicius167/ityped](https://github.com/luisvi
 Set the strings to pass through
 
 Type : **{ [Array](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array) }**
-
-Default : **[]**
