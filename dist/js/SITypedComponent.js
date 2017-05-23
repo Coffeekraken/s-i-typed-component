@@ -25,7 +25,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @extends 	SWebComponent
  * Webcomponent wrapper around the freaking cool iTyped micro library to create nice typewriter effect.
  *
- * @styleguide 	Objects / ITyped
  * @example 	html
  * Hello <s-i-typed strings="['Univers']" loop="true">World</s-i-typed>
  * @see 		https://github.com/luisvinicius167/ityped
