@@ -1,25 +1,17 @@
 import SWebComponent from 'coffeekraken-sugar/js/core/SWebComponent'
-import { init as __iTypedInit } from 'ityped';
+import { init } from 'ityped';
 
 /**
  * @name 		SITypedComponent
  * @extends 	SWebComponent
  * Webcomponent wrapper around the freaking cool iTyped micro library to create nice typewriter effect.
+ *
  * @example 	html
- * <s-i-typed strings="['hello','world']">Cool</s-i-typed>
+ * Hello <s-i-typed strings="['Univers']" loop="true">World</s-i-typed>
+ * @see 		https://github.com/luisvinicius167/ityped
  * @author 		Olivier Bossel <olivier.bossel@gmail.com>
  */
 
- /**
-  * @name 		ITyped
-  * Create a nice typewriter effect
-  * @styleguide 	Objects / ITyped
-  * @example 	html
-  * <h3 class="h3">
-  * 	Hello <s-i-typed strings="['Univers']">World</s-i-typed>
-  * </h3>
-  * @author 		Olivier Bossel <olivier.bossel@gmail.com>
-  */
 
 export default class SITypedComponent extends SWebComponent {
 
@@ -37,6 +29,13 @@ export default class SITypedComponent extends SWebComponent {
 			 * @name 	iTyped
 			 * @see 	https://github.com/luisvinicius167/ityped
 			 */
+
+			/**
+			 * Set the strings to pass through
+			 * @prop
+			 * @type 		{Array}
+			 */
+			strings : []
 		};
 	}
 
@@ -44,7 +43,7 @@ export default class SITypedComponent extends SWebComponent {
 	 * Css
 	 * @protected
 	 */
-	static css(componentName, componentNameDash) {
+	static defaultCss(componentName, componentNameDash) {
 		return `
 			@keyframes s-i-typed-blink {
 				100% {
@@ -75,14 +74,22 @@ export default class SITypedComponent extends SWebComponent {
 	}
 
 	/**
+	 * Should component accept prop
+	 * @definition 		SWebComponent.shouldComponentAcceptProp
+	 * @protected
+	 */
+	shouldAcceptComponentProp(prop) {
+		return true;
+	}
+
+	/**
 	 * Component will mount
 	 * @definition 		SWebComponent.componentWillMount
 	 * @protected
 	 */
 	componentWillMount() {
 		super.componentWillMount();
-		this.props.strings.unshift(this.innerHTML);
-		this.innerHTML = '';
+
 	}
 
 	/**
@@ -93,7 +100,10 @@ export default class SITypedComponent extends SWebComponent {
 	componentMount() {
 		super.componentMount();
 
+		this.props.strings.unshift(this.innerHTML);
+		this.innerHTML = '';
+
 		// init the iTyped library
-		__iTypedInit(this, this.props);
+		init(this, this.props);
 	}
 }

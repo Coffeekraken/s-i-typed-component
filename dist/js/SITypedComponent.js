@@ -24,19 +24,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @name 		SITypedComponent
  * @extends 	SWebComponent
  * Webcomponent wrapper around the freaking cool iTyped micro library to create nice typewriter effect.
+ *
  * @example 	html
- * <s-i-typed strings="['hello','world']">Cool</s-i-typed>
- * @author 		Olivier Bossel <olivier.bossel@gmail.com>
- */
-
-/**
- * @name 		ITyped
- * Create a nice typewriter effect
- * @styleguide 	Objects / ITyped
- * @example 	html
- * <h3 class="h3">
- * 	Hello <s-i-typed strings="['Univers']">World</s-i-typed>
- * </h3>
+ * Hello <s-i-typed strings="['Univers']" loop="true">World</s-i-typed>
+ * @see 		https://github.com/luisvinicius167/ityped
  * @author 		Olivier Bossel <olivier.bossel@gmail.com>
  */
 
@@ -50,18 +41,28 @@ var SITypedComponent = function (_SWebComponent) {
 	}
 
 	_createClass(SITypedComponent, [{
-		key: 'componentWillMount',
+		key: 'shouldAcceptComponentProp',
 
+
+		/**
+   * Should component accept prop
+   * @definition 		SWebComponent.shouldComponentAcceptProp
+   * @protected
+   */
+		value: function shouldAcceptComponentProp(prop) {
+			return true;
+		}
 
 		/**
    * Component will mount
    * @definition 		SWebComponent.componentWillMount
    * @protected
    */
+
+	}, {
+		key: 'componentWillMount',
 		value: function componentWillMount() {
 			_get(SITypedComponent.prototype.__proto__ || Object.getPrototypeOf(SITypedComponent.prototype), 'componentWillMount', this).call(this);
-			this.props.strings.unshift(this.innerHTML);
-			this.innerHTML = '';
 		}
 
 		/**
@@ -75,18 +76,21 @@ var SITypedComponent = function (_SWebComponent) {
 		value: function componentMount() {
 			_get(SITypedComponent.prototype.__proto__ || Object.getPrototypeOf(SITypedComponent.prototype), 'componentMount', this).call(this);
 
+			this.props.strings.unshift(this.innerHTML);
+			this.innerHTML = '';
+
 			// init the iTyped library
 			(0, _ityped.init)(this, this.props);
 		}
 	}], [{
-		key: 'css',
+		key: 'defaultCss',
 
 
 		/**
    * Css
    * @protected
    */
-		value: function css(componentName, componentNameDash) {
+		value: function defaultCss(componentName, componentNameDash) {
 			return '\n\t\t\t@keyframes s-i-typed-blink {\n\t\t\t\t100% {\n\t\t\t\t\topacity: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t@-webkit-keyframes s-i-typed-blink {\n\t\t\t\t100% {\n\t\t\t\t\topacity: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t@-moz-keyframes s-i-typed-blink {\n\t\t\t\t100% {\n\t\t\t\t\topacity: 0;\n\t\t\t\t}\n\t\t\t}\n\t\t\t.ityped-cursor {\n\t\t\t\tfont-size: 1em;\n\t\t\t\topacity: 1;\n\t\t\t\t-webkit-animation: s-i-typed-blink 0.3s infinite;\n\t\t\t\t-moz-animation: s-i-typed-blink 0.3s infinite;\n\t\t\t\tanimation: s-i-typed-blink 0.3s infinite;\n\t\t\t\tanimation-direction: alternate;\n\t\t\t}\n\t\t\t' + componentNameDash + ' {\n\t\t\t}\n\t\t';
 		}
 	}, {
@@ -107,6 +111,13 @@ var SITypedComponent = function (_SWebComponent) {
      * @name 	iTyped
      * @see 	https://github.com/luisvinicius167/ityped
      */
+
+				/**
+     * Set the strings to pass through
+     * @prop
+     * @type 		{Array}
+     */
+				strings: []
 			};
 		}
 	}]);
