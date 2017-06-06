@@ -41,7 +41,7 @@ var SITypedComponent = function (_SWebComponent) {
 	}
 
 	_createClass(SITypedComponent, [{
-		key: 'shouldAcceptComponentProp',
+		key: 'shouldComponentAcceptProp',
 
 
 		/**
@@ -49,7 +49,7 @@ var SITypedComponent = function (_SWebComponent) {
    * @definition 		SWebComponent.shouldComponentAcceptProp
    * @protected
    */
-		value: function shouldAcceptComponentProp(prop) {
+		value: function shouldComponentAcceptProp(prop) {
 			return true;
 		}
 
