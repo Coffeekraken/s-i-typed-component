@@ -1,6 +1,6 @@
 {
   "name": "coffeekraken-s-i-typed-component",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Webcomponent wrapper around the freaking cool iTyped micro library to create nice typewriter effect.",
   "main": "dist/index.js",
   "homepage": "http://coffeekraken.io",
@@ -46,7 +46,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "coffeekraken-sugar": "^0.0.3",
+    "coffeekraken-sugar": "^1.0.0",
     "ityped": "0.0.10"
   },
   "devDependencies": {
