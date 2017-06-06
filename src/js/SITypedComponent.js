@@ -78,7 +78,7 @@ export default class SITypedComponent extends SWebComponent {
 	 * @definition 		SWebComponent.shouldComponentAcceptProp
 	 * @protected
 	 */
-	shouldAcceptComponentProp(prop) {
+	shouldComponentAcceptProp(prop) {
 		return true;
 	}
 
