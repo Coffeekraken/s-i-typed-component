@@ -1,6 +1,6 @@
 {
   "name": "coffeekraken-s-i-typed-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Webcomponent wrapper around the freaking cool iTyped micro library to create nice typewriter effect.",
   "main": "dist/index.js",
   "homepage": "http://coffeekraken.io",
